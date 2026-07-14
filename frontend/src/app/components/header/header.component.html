@@ -8,7 +8,7 @@
 
   <!-- Barra de Pesquisa Funcional (Centro) -->
   <div class="header__search">
-    <input type="text" class="header__search-input" placeholder="O que você procura?">
+    <input type="text" class="header__search-input" placeholder="O que você procura?" (keyup)="onSearch($event)">
     <button class="header__search-button" aria-label="Pesquisar">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>

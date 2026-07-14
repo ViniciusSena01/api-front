@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProdutosService } from '../../services/produtos.service';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private produtosService: ProdutosService) {}
+
+  // Chamado a cada tecla digitada no input
+  onSearch(event: Event): void {
+    const termo = (event.target as HTMLInputElement).value;
+    this.produtosService.definirBusca(termo);
+  }
 }
