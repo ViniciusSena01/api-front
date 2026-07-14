@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
 :root {
    --color-primary: #007ee5;
   --color-black: #000000;
@@ -8,3 +10,19 @@
   --color-bg-placeholder: #a0a0a0;
 
 }
+
+:root {
+  /* minha outras variáveis ... */
+  --font-family: 'Inter', sans-serif;
+}
+
+/* Reset básico para aplicar a fonte em todo o documento */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+

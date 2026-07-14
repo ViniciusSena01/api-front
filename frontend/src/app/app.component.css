@@ -1,0 +1,322 @@
+.login-container{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box
+}
+
+
+.login-container__image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+/* Responsividade: vira uma coluna em tablets/celulares */
+@media (max-width: 820px) {
+  .login-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px;
+  }
+  .login-container__image {
+    max-width: 300px;
+  }
+}
+
+.promo-banner {
+  position: relative;
+  background-color: var(--color-bg-banner);
+  padding: 10px 48px 10px 16px; /* Padding extra na direita para não sobrepor o botão X */
+  text-align: center;
+  font-family: var(--font-family), sans-serif;
+  font-size: 14px;
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-grey-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promo-banner__text {
+  line-height: 1.4;
+}
+.promo-banner__link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.promo-banner__link:hover {
+  text-decoration: underline;
+}
+.promo-banner__close-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--color-grey-dark);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+.promo-banner__close-btn:hover {
+  color: var(--color-black);
+}
+
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+.login-form__header{
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ margin-bottom: 24px;
+}
+
+.login-form__title{
+ font-family: var(--font-family), sans-serif;
+ font-size: 24px;
+ font-weight: 600;
+ color: var(--color-black);
+ margin: 0;
+}
+
+.login-form__signup-text {
+  font-family: var(--font-family), sans-serif;
+  font-size: 12px;
+  color: var(--color-grey-dark);
+}
+.login-form__signup-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-form__signup-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   4. BOTÕES DE SSO (GOOGLE E APPLE)
+   ========================================== */
+.login-form__sso-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaçamento entre os dois botões */
+  margin-bottom: 24px;
+}
+
+/* Estilo Base dos botões */
+.login-form__sso-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Espaço entre o ícone (quando houver) e o texto */
+  padding: 12px 24px;
+  font-family: var(--font-family), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito de micro-animação ao clicar */
+.login-form__sso-button:active {
+  transform: scale(0.98);
+}
+
+/* Modificador do Google (Azul) */
+.login-form__sso-button--google {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.login-form__sso-button--google:hover {
+  background-color: #006bca; /* Azul um pouco mais escuro no hover */
+}
+
+/* Modificador da Apple (Preto) */
+.login-form__sso-button--apple {
+  background-color: var(--color-black);
+  color: #ffffff;
+}
+
+.login-form__sso-button--apple:hover {
+  background-color: #222222; /* Preto um pouco mais claro no hover */
+}
+
+/* ==========================================
+   5. DIVISOR "OR"
+   ========================================== */
+.login-form__divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Pseudo-elementos que desenham as linhas cinzas nas laterais */
+.login-form__divider::before,
+.login-form__divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.login-form__divider::before {
+  margin-right: 16px;
+}
+
+.login-form__divider::after {
+  margin-left: 16px;
+}
+
+.login-form__divider-text {
+  font-family: var(--font-family), sans-serif;
+  font-size: 12px;
+  color: var(--color-grey-dark);
+}
+
+/* ==========================================
+   6. CAMPOS DE ENTRADA (INPUTS)
+   ========================================== */
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* Esconde visualmente as labels para manter a estética do mockup,
+   mas preserva a acessibilidade para leitores de tela */
+.login-form__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Estilo do Input */
+.login-form__input {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-family), sans-serif;
+  font-size: 16px;
+  border: 1px solid var(--color-grey-light);
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: var(--color-black);
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito de foco quando o usuário clica para digitar */
+.login-form__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 126, 229, 0.15); /* Brilho sutil azul */
+}
+
+/* Estilização da cor do Placeholder */
+.login-form__input::placeholder {
+  color: var(--color-bg-placeholder);
+  opacity: 1;
+}
+
+/* Oculta as mensagens de erro por padrão */
+.login-form__error {
+  display: none; /* Só mostraremos via JavaScript ou classes do Angular quando inválido */
+  font-family: var(--font-family), sans-serif;
+  font-size: 12px;
+  color: #d93025; /* Vermelho padrão de erro */
+  margin-top: 4px;
+}
+
+/* ==========================================
+   7. AÇÕES DO FORMULÁRIO (CHECKBOX & BOTÃO SUBMIT)
+   ========================================== */
+.login-form__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+/* O wrapper do checkbox */
+.login-form__remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family), sans-serif;
+  font-size: 14px;
+  color: var(--color-black);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* A caixinha do checkbox customizada */
+.login-form__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Botão azul de entrar "Sign in" */
+.login-form__submit-button {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 12px 28px;
+  font-family: var(--font-family), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-form__submit-button:hover {
+  background-color: #006bca;
+}
+
+.login-form__submit-button:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   8. LINK "FORGOTTEN YOUR PASSWORD?"
+   ========================================== */
+.login-form__forgot-link {
+  font-family: var(--font-family), sans-serif;
+  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.login-form__forgot-link:hover {
+  text-decoration: underline;
+}
