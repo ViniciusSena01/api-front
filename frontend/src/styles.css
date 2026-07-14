@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+   --color-primary: #007ee5;
+  --color-black: #000000;
+  --color-grey-dark: #787878;
+  --color-grey-light: #cccccc;
+  --color-bg-banner: #f8f8f8;
+  --color-bg-placeholder: #a0a0a0;
+
+}
