@@ -1,1 +1,47 @@
-<p>produto-detalhe works!</p>
+<main class="detail-container">
+
+  <!-- Caso o produto não seja encontrado (ex: ID inexistente) -->
+  @if (!produto) {
+    <div class="product-not-found">
+      <h2>Produto não encontrado!</h2>
+      <a routerLink="/produtos" class="back-link">Voltar para a vitrine</a>
+    </div>
+  } @else {
+    <!-- Botão de Voltar -->
+    <a routerLink="/produtos" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i> Voltar para a vitrine
+    </a>
+
+    <div class="detail-grid">
+      <!-- Coluna Esquerda: Imagem Grande -->
+      <div class="detail__image-wrapper">
+        <img [src]="produto.imagem" [alt]="produto.nome" class="detail__image">
+      </div>
+
+      <!-- Coluna Direita: Informações -->
+      <div class="detail__info">
+        <span class="detail__category">{{ produto.categoria }}</span>
+        <h1 class="detail__title">{{ produto.nome }}</h1>
+
+        <div class="detail__price-container">
+          <span class="detail__price-label">Preço à vista:</span>
+          <span class="detail__price">{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</span>
+        </div>
+
+        <div class="detail__description-container">
+          <h2>Descrição do Produto</h2>
+          <p class="detail__description">{{ produto.descricao }}</p>
+        </div>
+
+
+
+
+        <!-- Ação: Adicionar ao Carrinho -->
+        <button (click)="adicionarCarrinho()" class="detail__cart-button" aria-label="Adicionar ao Carrinho">
+          <i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho
+        </button>
+      </div>
+    </div>
+  }
+
+</main>

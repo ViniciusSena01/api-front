@@ -41,4 +41,8 @@ export class ProdutosService {
       produto.descricao.toLowerCase().includes(termo.toLowerCase()) ||
       produto.categoria.toLowerCase().includes(termo.toLowerCase()));
   }
+
+  obterProdutoPorId(id: number): Produto | undefined {
+    return this.produtos.find(p => p.id === id);
+  }
 }

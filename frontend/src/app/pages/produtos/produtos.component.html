@@ -25,9 +25,10 @@
               {{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}
             </span>
 
-            <button class="product-card__button" aria-label="Ver Detalhes">
+            <a [routerLink]="['/produtos', produto.id]" class="product-card__button">
               Ver Detalhes
-            </button>
+            </a>
+
           </div>
         </div>
 
