@@ -1,0 +1,102 @@
+<main class="cart-container">
+  <h1 class="cart-title">Seu Carrinho de Compras</h1>
+
+  <!-- Caso o carrinho esteja vazio -->
+  @if (carrinhoVazio) {
+    <div class="cart-empty">
+      <i class="fa-solid fa-cart-shopping cart-empty__icon"></i>
+      <h2>Seu carrinho está vazio!</h2>
+      <p>Que tal voltar para a vitrine e escolher alguns equipamentos?</p>
+      <a routerLink="/produtos" class="cart-empty__button">
+        Voltar para a Vitrine
+      </a>
+    </div>
+  } @else {
+    <!-- Layout de duas colunas -->
+    <div class="cart-grid">
+
+      <!-- Coluna Esquerda: Itens do Carrinho -->
+      <section class="cart-items">
+        @for (item of itens; track item.produto.id) {
+          <article class="cart-item">
+
+            <!-- Imagem Miniatura -->
+            <div class="cart-item__image-wrapper">
+              <img [src]="item.produto.imagem" [alt]="item.produto.nome" class="cart-item__image">
+            </div>
+
+            <!-- Detalhes do Produto -->
+            <div class="cart-item__details">
+              <span class="cart-item__category">{{ item.produto.categoria }}</span>
+              <h2 class="cart-item__name" [title]="item.produto.nome">{{ item.produto.nome }}</h2>
+              <span class="cart-item__price-unit">
+                Preço un: {{ item.produto.preco | currency:'BRL' }}
+              </span>
+            </div>
+
+            <!-- Controles de Quantidade -->
+            <div class="cart-item__quantity">
+              <button
+                class="quantity-btn"
+                (click)="alterarQuantidade(item.produto.id, item.quantidade - 1)"
+                aria-label="Diminuir quantidade">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+
+              <span class="quantity-value">{{ item.quantidade }}</span>
+
+              <button
+                class="quantity-btn"
+                (click)="alterarQuantidade(item.produto.id, item.quantidade + 1)"
+                aria-label="Aumentar quantidade">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+
+            <!-- Subtotal (Quantidade x Preço) -->
+            <div class="cart-item__subtotal">
+              <span class="subtotal-label">Subtotal</span>
+              <span class="subtotal-value">
+                {{ (item.produto.preco * item.quantidade) | currency:'BRL' }}
+              </span>
+            </div>
+
+            <!-- Botão de Deletar -->
+            <button
+              class="cart-item__remove-btn"
+              (click)="removerItem(item.produto.id)"
+              aria-label="Remover produto">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+
+          </article>
+        }
+      </section>
+
+      <!-- Coluna Direita: Resumo do Pedido -->
+      <aside class="cart-summary">
+        <h2 class="summary-title">Resumo do Pedido</h2>
+
+        <div class="summary-row">
+          <span>Quantidade de itens:</span>
+          <strong>{{ quantidadeItens }}</strong>
+        </div>
+
+        <div class="summary-row summary-row--total">
+          <span>Total do Pedido:</span>
+          <strong>{{ totalCarrinho | currency:'BRL' }}</strong>
+        </div>
+
+        <button class="checkout-btn">
+          Finalizar Compra
+        </button>
+
+        <a routerLink="/produtos" class="continue-shopping">
+          Continuar Comprando
+        </a>
+      </aside>
+
+    </div>
+  }
+</main>
+

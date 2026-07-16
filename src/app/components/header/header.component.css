@@ -1,0 +1,125 @@
+/* ==========================================
+   ESTILIZAÇÃO DO CABEÇALHO (HEADER) - PROWAY STYLE
+   ========================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-grey-medium);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 1. Logotipo Gigante */
+.header__logo a {
+  font-size: 38px; /* Fonte bem grande conforme o print */
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  display: flex;
+}
+
+.header__logo-brand {
+  color: #0056b3; /* Azul escuro clássico corporativo */
+}
+
+.header__logo-sub {
+  color: #ff8c00; /* Laranja conforme o Computers do print */
+}
+
+/* 2. Barra de Pesquisa Centro */
+.header__search {
+  display: flex;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+  margin: 0 20px;
+}
+
+.header__search:focus-within {
+  border-color: var(--color-blue);
+}
+
+.header__search-input {
+  width: 100%;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.header__search-button {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  color: var(--color-grey-dark);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header__search-button:hover {
+  color: var(--color-blue);
+}
+
+/* 3. Menu de Navegação */
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header__nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-link {
+  font-size: 16px;
+  font-weight: 600; /* Links mais marcados */
+  color: var(--color-black);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__nav-link:hover {
+  color: var(--color-blue);
+}
+
+/* 4. Ícone e Badge do Carrinho */
+.header__cart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header__cart-icon {
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.header__cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(217, 48, 37, 0.3);
+}
