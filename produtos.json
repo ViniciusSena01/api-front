@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "nome": "Placa de Vídeo MSI Geforce RTX 5060 Ti Ventus 2X Black OC Plus",
+    "descricao": "Uma placa high-end da nova geração ideal para quem quer rodar jogos modernos em Quad HD ou 4K com folga. Memória: 16GB GDDR7. Tecnologias: Suporta Ray Tracing e DLSS 4.",
+    "preco": 2976.77,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RTX+5060+Ti"
+  },
+  {
+    "id": 2,
+    "nome": "Processador AMD Ryzen 9 9950X",
+    "descricao": "Um dos processadores mais poderosos do mercado, focado em setups de altíssimo desempenho para jogos e renderização. Núcleos: Desempenho extremo para multitarefas.",
+    "preco": 4299.90,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+Ryzen+9"
+  },
+  {
+    "id": 3,
+    "nome": "Mouse Gamer Redragon M711 Cobra RGB",
+    "descricao": "Uma das melhores opções de custo-benefício para quem quer um mouse gamer de entrada que seja durável e preciso. 8 botões programáveis, design ergonômico.",
+    "preco": 80.99,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+Redragon"
+  },
+  {
+    "id": 4,
+    "nome": "Mouse Gamer Logitech G502 Lightspeed Sem Fio",
+    "descricao": "Um mouse high-end lendário, perfeito para quem busca tempo de resposta ultrarrápido sem se prender a fios. Sensor HERO 25K (até 25.600 DPI). Bateria de 60 horas.",
+    "preco": 809.91,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+G502+Lightspeed"
+  },
+  {
+    "id": 5,
+    "nome": "Machenike Teclado Mecânico Gamer K500-B61",
+    "descricao": "Um teclado mecânico compacto e acessível, ideal para setups minimalistas que precisam de espaço extra na mesa. Formato 60%, switches brown hot-swappable.",
+    "preco": 199.90,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+Machenike"
+  },
+  {
+    "id": 6,
+    "nome": "Teclado Mecânico Gamer Sem Fio Logitech G Pro X 60 Lightspeed",
+    "descricao": "Focado no cenário competitivo profissional, este é um teclado premium com taxa de transmissão ultrarrápida de 1 ms. Conexão LIGHTSPEED ou Bluetooth.",
+    "preco": 1169.91,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+G+Pro+X"
+  },
+  {
+    "id": 7,
+    "nome": "NVIDIA GeForce GTX 1650",
+    "descricao": "Placa de vídeo de modelo básico, excelente custo-benefício para jogos leves e e-sports.",
+    "preco": 850.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+GTX+1650"
+  },
+  {
+    "id": 8,
+    "nome": "NVIDIA GeForce RTX 3050",
+    "descricao": "Excelente entrada para tecnologias atuais (Ray Tracing, DLSS) com bons gráficos em Full HD.",
+    "preco": 1300.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RTX+3050"
+  },
+  {
+    "id": 9,
+    "nome": "AMD Radeon RX 6600",
+    "descricao": "Ótimo custo-benefício para jogos em resolução Full HD com alto desempenho e taxa de quadros estável.",
+    "preco": 1450.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RX+6600"
+  },
+  {
+    "id": 10,
+    "nome": "NVIDIA GeForce RTX 4060",
+    "descricao": "Placa intermediária muito eficiente, focada em DLSS 3 e baixo consumo de energia.",
+    "preco": 2100.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RTX+4060"
+  },
+  {
+    "id": 11,
+    "nome": "AMD Radeon RX 7600",
+    "descricao": "Concorrente direta com arquitetura moderna RDNA 3 e muita memória para a faixa de preço.",
+    "preco": 1800.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RX+7600"
+  },
+  {
+    "id": 12,
+    "nome": "NVIDIA GeForce RTX 4080",
+    "descricao": "Alta performance para resoluções 4K e tarefas pesadas de inteligência artificial ou renderização.",
+    "preco": 7500.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RTX+4080"
+  },
+  {
+    "id": 13,
+    "nome": "NVIDIA GeForce RTX 5090",
+    "descricao": "O topo de linha absoluto do mercado atual com tecnologias revolucionárias de hardware e IA.",
+    "preco": 15999.00,
+    "categoria": "Placas de Vídeo",
+    "imagem": "https://placehold.co/300x200/0056b3/ffffff?text=GPU+RTX+5090"
+  },
+  {
+    "id": 14,
+    "nome": "Intel Core i3 (12ª Gen)",
+    "descricao": "Processador básico ideal e suficiente para tarefas do dia a dia e PCs gamer de entrada.",
+    "preco": 600.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+i3"
+  },
+  {
+    "id": 15,
+    "nome": "AMD Ryzen 3",
+    "descricao": "Excelente porta de entrada AMD para computação rápida e jogos casuais com ótimo preço.",
+    "preco": 500.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+Ryzen+3"
+  },
+  {
+    "id": 16,
+    "nome": "AMD Ryzen 5 5600X",
+    "descricao": "O rei do custo-benefício moderno para jogos em taxas de quadros ultra altas.",
+    "preco": 900.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+Ryzen+5"
+  },
+  {
+    "id": 17,
+    "nome": "Intel Core i5 13600K",
+    "descricao": "Intermediário robusto de alta performance, super bem avaliado por criadores e gamers.",
+    "preco": 1800.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+i5"
+  },
+  {
+    "id": 18,
+    "nome": "AMD Ryzen 7 7800X3D",
+    "descricao": "Máxima eficiência térmica e foco total em frames para jogos competitivos através do 3D V-Cache.",
+    "preco": 2799.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+Ryzen+7"
+  },
+  {
+    "id": 19,
+    "nome": "Intel Core Ultra 9 285KF",
+    "descricao": "Performance extrema com novas arquiteturas de núcleos focadas em inteligência artificial e produtividade pesada.",
+    "preco": 3800.00,
+    "categoria": "Processadores",
+    "imagem": "https://placehold.co/300x200/ff8c00/ffffff?text=CPU+Ultra+9"
+  },
+  {
+    "id": 20,
+    "nome": "Placa-Mãe H610",
+    "descricao": "Placa-mãe de entrada ideal para setups Intel estáveis e de baixo custo.",
+    "preco": 550.00,
+    "categoria": "Placas-Mãe",
+    "imagem": "https://placehold.co/300x200/111111/ffffff?text=Mobo+H610"
+  },
+  {
+    "id": 21,
+    "nome": "Placa-Mãe B550",
+    "descricao": "O padrão seguro para custo-benefício AMD com suporte a PCIe Gen 4 e overclock básico.",
+    "preco": 800.00,
+    "categoria": "Placas-Mãe",
+    "imagem": "https://placehold.co/300x200/111111/ffffff?text=Mobo+B550"
+  },
+  {
+    "id": 22,
+    "nome": "Placa-Mãe B650",
+    "descricao": "Placa intermediária robusta para a plataforma AM5 da AMD, com suporte a memórias DDR5.",
+    "preco": 1200.00,
+    "categoria": "Placas-Mãe",
+    "imagem": "https://placehold.co/300x200/111111/ffffff?text=Mobo+B650"
+  },
+  {
+    "id": 23,
+    "nome": "Placa-Mãe Z790",
+    "descricao": "Placa-mãe high-end projetada para setups Intel avançados e overclocking extremo.",
+    "preco": 2000.00,
+    "categoria": "Placas-Mãe",
+    "imagem": "https://placehold.co/300x200/111111/ffffff?text=Mobo+Z790"
+  },
+  {
+    "id": 24,
+    "nome": "Placa-Mãe X670E",
+    "descricao": "Placa-mãe de altíssimo nível para extrair o máximo de desempenho da arquitetura Ryzen AM5.",
+    "preco": 2800.00,
+    "categoria": "Placas-Mãe",
+    "imagem": "https://placehold.co/300x200/111111/ffffff?text=Mobo+X670E"
+  },
+  {
+    "id": 25,
+    "nome": "Memória DDR4 16GB (2x8GB) 3200MHz",
+    "descricao": "Kit de memória RAM básico e de excelente desempenho para a maioria dos PCs atuais.",
+    "preco": 350.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=DDR4+16GB"
+  },
+  {
+    "id": 26,
+    "nome": "Memória DDR4 32GB (2x16GB) 3600MHz",
+    "descricao": "Quantidade de memória ideal para evitar micro-travamentos em jogos pesados e renderização.",
+    "preco": 650.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=DDR4+32GB"
+  },
+  {
+    "id": 27,
+    "nome": "Memória DDR5 32GB 6000MHz",
+    "descricao": "Kit de memória RAM de nova geração DDR5, perfeito para plataformas modernas Intel e AMD.",
+    "preco": 950.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=DDR5+32GB"
+  },
+  {
+    "id": 28,
+    "nome": "Memória DDR5 64GB 6400MHz+",
+    "descricao": "Kit entusiasta de memória DDR5 com altíssima velocidade e capacidade gigante para tarefas pesadas.",
+    "preco": 1800.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=DDR5+64GB"
+  },
+  {
+    "id": 29,
+    "nome": "SSD SATA III 1TB",
+    "descricao": "SSD em formato clássico de 2.5 polegadas, rápido e com ótimo preço por gigabyte.",
+    "preco": 300.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=SSD+SATA+1TB"
+  },
+  {
+    "id": 30,
+    "nome": "SSD NVMe M.2 1TB Gen4",
+    "descricao": "Armazenamento NVMe de alta velocidade PCIe Gen 4, eliminando telas de carregamento.",
+    "preco": 450.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=SSD+Gen4+1TB"
+  },
+  {
+    "id": 31,
+    "nome": "SSD NVMe M.2 2TB Gen5 Kingston Fury Renegade",
+    "descricao": "Velocidades surreais superiores a 12.000 MB/s para carregamentos instantâneos em jogos e sistemas.",
+    "preco": 1200.00,
+    "categoria": "Memória RAM e Armazenamento",
+    "imagem": "https://placehold.co/300x200/007ee5/ffffff?text=SSD+Gen5+2TB"
+  },
+  {
+    "id": 32,
+    "nome": "Mouse Logitech G203",
+    "descricao": "O mouse de entrada da Logitech com iluminação RGB sutil e visual de pegada clássica.",
+    "preco": 120.00,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+G203"
+  },
+  {
+    "id": 33,
+    "nome": "Mouse Attack Shark R1",
+    "descricao": "Opção sem fio com peso ultraleve e sensor de alta precisão com ótimo preço.",
+    "preco": 180.00,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+Attack+Shark"
+  },
+  {
+    "id": 34,
+    "nome": "Mouse Logitech G705 Lightspeed",
+    "descricao": "Mouse gamer sem fio compacto com ergonomia pensada para mãos menores e acabamento premium.",
+    "preco": 400.00,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+G705"
+  },
+  {
+    "id": 35,
+    "nome": "Mouse Logitech G502 X",
+    "descricao": "A evolução do lendário mouse de alta precisão, agora mais leve e com switches híbridos.",
+    "preco": 500.00,
+    "categoria": "Mouses",
+    "imagem": "https://placehold.co/300x200/d93025/ffffff?text=Mouse+G502X"
+  },
+  {
+    "id": 36,
+    "nome": "Teclado MCHOSE Ace 60 Pro",
+    "descricao": "Teclado com excelente acústica, ótima porta de entrada no universo dos teclados customizáveis.",
+    "preco": 350.00,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+MCHOSE"
+  },
+  {
+    "id": 37,
+    "nome": "Teclado MAD68 HE",
+    "descricao": "Teclado magnético com tecnologia Rapid Trigger, a melhor opção de custo-benefício atual para FPS competitivo.",
+    "preco": 450.00,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+MAD68"
+  },
+  {
+    "id": 38,
+    "nome": "Teclado Logitech G713",
+    "descricao": "Teclado mecânico gamer da coleção Aurora com visual estético aconchegante e descanso de pulso em nuvem.",
+    "preco": 700.00,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+G713"
+  },
+  {
+    "id": 39,
+    "nome": "Teclado Logitech G PRO",
+    "descricao": "Teclado mecânico compacto tenkeyless projetado e testado por atletas de eSports.",
+    "preco": 800.00,
+    "categoria": "Teclados",
+    "imagem": "https://placehold.co/300x200/787878/ffffff?text=Teclado+G+PRO"
+  },
+  {
+    "id": 40,
+    "nome": "Monitor 24\" IPS 75Hz",
+    "descricao": "Monitor básico ideal para produtividade diária e jogos casuais com cores precisas do painel IPS.",
+    "preco": 650.00,
+    "categoria": "Monitores",
+    "imagem": "https://placehold.co/300x200/22c55e/ffffff?text=Monitor+75Hz"
+  },
+  {
+    "id": 41,
+    "nome": "Monitor IPS 144Hz ou 165Hz",
+    "descricao": "Monitor focado em fluidez com painel IPS de cores vivas e alta taxa de atualização.",
+    "preco": 950.00,
+    "categoria": "Monitores",
+    "imagem": "https://placehold.co/300x200/22c55e/ffffff?text=Monitor+144Hz"
+  },
+  {
+    "id": 42,
+    "nome": "Monitor AOC Agon G4",
+    "descricao": "Excelentes configurações com tempo de resposta ultrabaixo e preço muito competitivo.",
+    "preco": 1300.00,
+    "categoria": "Monitores",
+    "imagem": "https://placehold.co/300x200/22c55e/ffffff?text=Monitor+Agon+G4"
+  },
+  {
+    "id": 43,
+    "nome": "Monitor 240Hz (0.5ms de resposta)",
+    "descricao": "A escolha preferencial de jogadores competitivos de jogos como CS2, Valorant e Overwatch.",
+    "preco": 1800.00,
+    "categoria": "Monitores",
+    "imagem": "https://placehold.co/300x200/22c55e/ffffff?text=Monitor+240Hz"
+  },
+  {
+    "id": 44,
+    "nome": "Monitor Ultrawide / 4K",
+    "descricao": "Monitor de altíssima resolução que oferece imersão cinematográfica para jogos single-player de campanha.",
+    "preco": 3500.00,
+    "categoria": "Monitores",
+    "imagem": "https://placehold.co/300x200/22c55e/ffffff?text=Monitor+Ultrawide"
+  },
+  {
+    "id": 45,
+    "nome": "Fone In-Ear KZ EDX Pro X",
+    "descricao": "Fone de ouvido in-ear para monitoramento com alta fidelidade de som e excelente isolamento acústico.",
+    "preco": 80.00,
+    "categoria": "Áudio (Fones e Headsets)",
+    "imagem": "https://placehold.co/300x200/a855f7/ffffff?text=KZ+EDX+Pro"
+  },
+  {
+    "id": 46,
+    "nome": "Headset HyperX Cloud Stinger 2",
+    "descricao": "Headset de entrada leve com conchas giratórias em 90 graus e microfone integrado de fácil controle.",
+    "preco": 220.00,
+    "categoria": "Áudio (Fones e Headsets)",
+    "imagem": "https://placehold.co/300x200/a855f7/ffffff?text=HyperX+Stinger+2"
+  },
+  {
+    "id": 47,
+    "nome": "Headset HyperX Cloud Alpha",
+    "descricao": "Clássico atemporal gamer conhecido por sua incrível durabilidade, conforto e áudio cristalino de câmara dupla.",
+    "preco": 450.00,
+    "categoria": "Áudio (Fones e Headsets)",
+    "imagem": "https://placehold.co/300x200/a855f7/ffffff?text=HyperX+Cloud+Alpha"
+  },
+  {
+    "id": 48,
+    "nome": "Headset Astro A50 Wireless",
+    "descricao": "Headset wireless premium com base de carregamento e espacialidade 3D Dolby Audio de alto nível.",
+    "preco": 1500.00,
+    "categoria": "Áudio (Fones e Headsets)",
+    "imagem": "https://placehold.co/300x200/a855f7/ffffff?text=Astro+A50+Wireless"
+  },
+  {
+    "id": 49,
+    "nome": "Controle 8BitDo Ultimate (Hall Effect)",
+    "descricao": "Controle ergonômico para PC que evita problemas de drift nos analógicos com sensores magnéticos duráveis.",
+    "preco": 250.00,
+    "categoria": "Outros Periféricos e Acessórios",
+    "imagem": "https://placehold.co/300x200/6366f1/ffffff?text=Controle+8BitDo"
+  },
+  {
+    "id": 50,
+    "nome": "Roteador Huawei AX3 (Wi-Fi 6 Plus)",
+    "descricao": "Roteador gigabit moderno de alta velocidade para downloads rápidos e conexão sem fio com baixa latência.",
+    "preco": 350.00,
+    "categoria": "Outros Periféricos e Acessórios",
+    "imagem": "https://placehold.co/300x200/6366f1/ffffff?text=Roteador+Huawei"
+  }
+]
