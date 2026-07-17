@@ -2,6 +2,7 @@ import { CarrinhoService } from '../../services/carrinho.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CarrinhoItem } from '../../models/carrinho-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrinho',
@@ -16,7 +17,14 @@ export class CarrinhoComponent implements OnInit, OnDestroy {
   carrinhoVazio: boolean = true;
   private subscription?: Subscription;
 
-  constructor(private carrinhoService: CarrinhoService) {}
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private router: Router
+  ) {}
+
+  finalizarCompra(): void {
+    this.router.navigate(['/pagamento']);
+  }
 
   ngOnInit(): void {
   // Guardamos a assinatura principal direto na variável

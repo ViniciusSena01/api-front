@@ -77,6 +77,12 @@ export class CarrinhoService {
     return this.itensCarrinho.reduce((total, item) => total + item.produto.preco * item.quantidade, 0);
   }
 
+  limparCarrinho(): void {
+    this.itensCarrinho = [];
+    this.atualizarCarrinho();
+  }
+
+
 
 
 }

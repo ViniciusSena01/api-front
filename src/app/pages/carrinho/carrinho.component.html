@@ -87,7 +87,7 @@
           <strong>{{ totalCarrinho | currency:'BRL' }}</strong>
         </div>
 
-        <button class="checkout-btn">
+        <button (click)="finalizarCompra()" class="checkout-btn">
           Finalizar Compra
         </button>
 

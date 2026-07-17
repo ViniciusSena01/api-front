@@ -1,0 +1,353 @@
+<main class="checkout-container">
+
+  <!-- ==========================================================================
+       1. BARRA DE PROGRESSO DO CHECKOUT (STEPPER)
+       ========================================================================== -->
+  <div class="checkout-stepper">
+    <div class="step-item" [class.step-item--active]="etapa === 'endereco'" [class.step-item--completed]="etapa !== 'endereco'">
+      <i class="fa-solid fa-location-dot"></i> Endereço
+    </div>
+    <div class="step-divider"></div>
+    <div class="step-item" [class.step-item--active]="etapa === 'entrega'" [class.step-item--completed]="etapa === 'pagamento' || etapa === 'sucesso'">
+      <i class="fa-solid fa-truck"></i> Entrega
+    </div>
+    <div class="step-divider"></div>
+    <div class="step-item" [class.step-item--active]="etapa === 'pagamento'" [class.step-item--completed]="etapa === 'sucesso'">
+      <i class="fa-solid fa-credit-card"></i> Pagamento
+    </div>
+    <div class="step-divider"></div>
+    <div class="step-item" [class.step-item--active]="etapa === 'sucesso'">
+      <i class="fa-solid fa-circle-check"></i> Concluir
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. CORPO PRINCIPAL DO WIZARD
+       ========================================================================== -->
+  <div class="checkout-grid" [class.checkout-grid--full]="etapa === 'sucesso'">
+    
+    <!-- Coluna da Esquerda: Passos Ativos -->
+    <div class="checkout-main">
+
+      <!-- ==================== PASSO 1: ENDEREÇO ==================== -->
+      @if (etapa === 'endereco') {
+        <section>
+          <h2 class="section-title">Preencha seu endereço de entrega</h2>
+          
+          <div class="card-form">
+            <div class="form-group">
+              <label for="cep">CEP*</label>
+              <input 
+                type="text" 
+                id="cep" 
+                placeholder="00000-000" 
+                maxlength="9"
+                [(ngModel)]="cep">
+            </div>
+
+            <div class="form-group">
+              <label for="uf">Estado (UF)*</label>
+              <input 
+                type="text" 
+                id="uf" 
+                placeholder="Ex: SP" 
+                maxlength="2"
+                [(ngModel)]="uf">
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="rua">Rua/Avenida*</label>
+              <input 
+                type="text" 
+                id="rua" 
+                placeholder="Nome da rua ou avenida"
+                [(ngModel)]="rua">
+            </div>
+
+            <div class="form-group">
+              <label for="numero-casa">Número*</label>
+              <input 
+                type="text" 
+                id="numero-casa" 
+                placeholder="Ex: 123"
+                [(ngModel)]="numero">
+            </div>
+
+            <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input 
+                type="text" 
+                id="complemento" 
+                placeholder="Apartamento, Bloco, etc."
+                [(ngModel)]="complemento">
+            </div>
+
+            <div class="form-group">
+              <label for="bairro">Bairro*</label>
+              <input 
+                type="text" 
+                id="bairro" 
+                placeholder="Bairro"
+                [(ngModel)]="bairro">
+            </div>
+
+            <div class="form-group">
+              <label for="cidade">Cidade*</label>
+              <input 
+                type="text" 
+                id="cidade" 
+                placeholder="Cidade"
+                [(ngModel)]="cidade">
+            </div>
+          </div>
+        </section>
+      }
+
+      <!-- ==================== PASSO 2: ENTREGA ==================== -->
+      @if (etapa === 'entrega') {
+        <section>
+          <h2 class="section-title">Selecione o tipo de entrega</h2>
+          
+          <div class="shipping-options">
+            <div 
+              class="shipping-card" 
+              [class.shipping-card--selected]="tipoEntrega === 'padrao'"
+              (click)="selecionarEntrega('padrao')">
+              <input 
+                type="radio" 
+                name="entregaRadio" 
+                [checked]="tipoEntrega === 'padrao'"
+                class="shipping-card__radio">
+              <div class="shipping-card__info">
+                <span class="shipping-card__name">Entrega Padrão</span>
+                <span class="shipping-card__time">Em até 7 dias úteis</span>
+              </div>
+              <span class="shipping-card__price">Grátis</span>
+            </div>
+
+            <div 
+              class="shipping-card" 
+              [class.shipping-card--selected]="tipoEntrega === 'expressa'"
+              (click)="selecionarEntrega('expressa')">
+              <input 
+                type="radio" 
+                name="entregaRadio" 
+                [checked]="tipoEntrega === 'expressa'"
+                class="shipping-card__radio">
+              <div class="shipping-card__info">
+                <span class="shipping-card__name">Entrega Expressa</span>
+                <span class="shipping-card__time">Em até 2 dias úteis</span>
+              </div>
+              <span class="shipping-card__price">R$ 25,00</span>
+            </div>
+          </div>
+        </section>
+      }
+
+      <!-- ==================== PASSO 3: PAGAMENTO ==================== -->
+      @if (etapa === 'pagamento') {
+        <section>
+          <h2 class="section-title">Selecione a forma de pagamento</h2>
+
+          <!-- Abas para seleção rápida -->
+          <div class="payment-tabs">
+            <button 
+              class="payment-tab" 
+              [class.payment-tab--active]="metodoPagamento === 'pix'"
+              (click)="selecionarMetodo('pix')">
+              <i class="fa-brands fa-pix"></i> Pix 
+              <span class="discount-badge">10% OFF</span>
+            </button>
+            
+            <button 
+              class="payment-tab" 
+              [class.payment-tab--active]="metodoPagamento === 'cartao'"
+              (click)="selecionarMetodo('cartao')">
+              <i class="fa-solid fa-credit-card"></i> Cartão de Crédito
+            </button>
+          </div>
+
+          <!-- Conteúdo PIX -->
+          @if (metodoPagamento === 'pix') {
+            <div class="pix-content">
+              <i class="fa-brands fa-pix"></i>
+              <p>
+                <strong>Ganhe 10% de desconto!</strong> O pagamento via PIX tem aprovação imediata. 
+                Ao concluir o pedido, você verá o QR Code e a chave Copia e Cola para realizar o pagamento.
+              </p>
+            </div>
+          }
+
+          <!-- Conteúdo CARTÃO DE CRÉDITO -->
+          @if (metodoPagamento === 'cartao') {
+            <div class="card-payment-container">
+              <!-- Visualização em Tempo Real do Cartão -->
+              <div class="credit-card-preview">
+                <div class="card-preview__header">
+                  <div class="card-preview__chip"></div>
+                </div>
+                <div class="card-preview__number">
+                  {{ formatarNumeroCartao() }}
+                </div>
+                <div class="card-preview__footer">
+                  <div class="card-preview__info">
+                    <div class="card-preview__label">Nome do Titular</div>
+                    <div class="card-preview__holder">
+                      {{ nomeTitular || 'Nome impresso' }}
+                    </div>
+                  </div>
+                  <div class="card-preview__info">
+                    <div class="card-preview__label">Validade</div>
+                    <div class="card-preview__expiry">
+                      {{ dataValidade || 'MM/AA' }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inputs do Formulário -->
+              <div class="card-form">
+                <div class="form-group form-group--full">
+                  <label for="numero">Número do cartão*</label>
+                  <input 
+                    type="text" 
+                    id="numero" 
+                    placeholder="0000 0000 0000 0000" 
+                    maxlength="16"
+                    [(ngModel)]="numeroCartao">
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="titular">Nome impresso no cartão*</label>
+                  <input 
+                    type="text" 
+                    id="titular" 
+                    placeholder="NOME COMPLETO"
+                    [(ngModel)]="nomeTitular">
+                </div>
+
+                <div class="form-group">
+                  <label for="vencimento">Vencimento*</label>
+                  <input 
+                    type="text" 
+                    id="vencimento" 
+                    placeholder="MM/AA" 
+                    maxlength="5"
+                    [(ngModel)]="dataValidade">
+                </div>
+
+                <div class="form-group">
+                  <label for="codigo">Código de segurança (CVV)*</label>
+                  <input 
+                    type="password" 
+                    id="codigo" 
+                    placeholder="000" 
+                    maxlength="3"
+                    [(ngModel)]="cvv">
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="opcoes-parcelas">Opções de parcelamento*</label>
+                  <select id="opcoes-parcelas" [(ngModel)]="parcelas">
+                    <option [value]="1">1x de {{ totalPedido | currency:'BRL' }} (Sem juros)</option>
+                    <option [value]="2">2x de {{ (totalPedido / 2) | currency:'BRL' }} (Sem juros)</option>
+                    <option [value]="3">3x de {{ (totalPedido / 3) | currency:'BRL' }} (Sem juros)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          }
+        </section>
+      }
+
+      <!-- ==================== PASSO 4: SUCESSO ==================== -->
+      @if (etapa === 'sucesso') {
+        <section class="success-container">
+          <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h1>PEDIDO REALIZADO COM SUCESSO!</h1>
+          <p>Seu pedido foi registrado no sistema e aguarda pagamento.</p>
+
+          <div class="order-box">
+            <div class="order-box__label">O número do seu pedido é:</div>
+            <div class="order-box__number">{{ numeroPedido }}</div>
+          </div>
+
+          <!-- Área do PIX se o pagamento foi PIX -->
+          @if (metodoPagamento === 'pix') {
+            <div class="pix-success-grid">
+              <div class="pix-qr-wrapper">
+                <img [src]="pixQRCodeUrl" alt="QR Code Pix" class="pix-qr-image">
+                <button (click)="copiarPixKey()" class="btn-copy-pix">
+                  {{ pixKeyCopied ? 'COPIADO!' : 'COPIAR CÓDIGO PIX' }}
+                </button>
+              </div>
+
+              <div class="pix-instructions">
+                <h2>Aproveite! Este código expira em 6 horas.</h2>
+                <div class="instruction-step">
+                  <i class="fa-solid fa-1"></i>
+                  <span>Abra o aplicativo da sua instituição financeira ou banco.</span>
+                </div>
+                <div class="instruction-step">
+                  <i class="fa-solid fa-2"></i>
+                  <span>Acesse a área PIX e escolha a opção "Copiar e Colar" ou "Ler QR Code".</span>
+                </div>
+                <div class="instruction-step">
+                  <i class="fa-solid fa-3"></i>
+                  <span>Insira a chave copiada ou escaneie a imagem do QR Code e confirme os dados.</span>
+                </div>
+              </div>
+            </div>
+          } @else {
+            <p>Seu pagamento em cartão de crédito foi processado e aprovado com sucesso! Obrigado pela compra.</p>
+          }
+
+          <a routerLink="/produtos" class="btn-home">Voltar para a Home</a>
+        </section>
+      }
+
+    </div>
+
+    <!-- Coluna da Direita: Resumo do Pedido (Oculto na tela de sucesso) -->
+    @if (etapa !== 'sucesso') {
+      <aside class="checkout-summary">
+        <h2 class="summary-title">Resumo do pedido</h2>
+
+        <div class="summary-row">
+          <span>Valor dos produtos:</span>
+          <strong>{{ totalProdutos | currency:'BRL' }}</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Frete:</span>
+          <strong>{{ valorFrete === 0 ? 'Grátis' : (valorFrete | currency:'BRL') }}</strong>
+        </div>
+
+        @if (metodoPagamento === 'pix') {
+          <div class="summary-row summary-row--discount">
+            <span>Desconto Pix (10%):</span>
+            <strong>- {{ (totalProdutos * 0.1) | currency:'BRL' }}</strong>
+          </div>
+        }
+
+        <div class="summary-row summary-row--total">
+          <span>Total do Pedido:</span>
+          <strong>{{ totalPedido | currency:'BRL' }}</strong>
+        </div>
+
+        <div class="checkout-actions">
+          <button class="btn-continue" (click)="proximaEtapa()">
+            CONTINUAR
+          </button>
+          
+          <button class="btn-back" (click)="voltarEtapa()">
+            VOLTAR
+          </button>
+        </div>
+      </aside>
+    }
+
+  </div>
+</main>

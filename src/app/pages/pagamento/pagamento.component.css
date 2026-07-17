@@ -1,0 +1,593 @@
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ==========================================================================
+   1. STEPPER DE PROGRESSO (BARRA DE NAVEGAÇÃO SUPERIOR)
+   ========================================================================== */
+.checkout-stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+  overflow-x: auto;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-grey-dark);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.step-item i {
+  font-size: 16px;
+}
+
+.step-item--active {
+  color: var(--color-blue);
+}
+
+.step-item--completed {
+  color: #22c55e;
+}
+
+.step-divider {
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-grey-medium);
+}
+
+/* ==========================================================================
+   2. ESTRUTURA GRID DE DUAS COLUNAS
+   ========================================================================== */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  align-items: start;
+}
+
+.checkout-main {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  min-height: 400px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+/* ==========================================================================
+   3. ETAPA 1 - ENDEREÇO
+   ========================================================================== */
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid var(--color-grey-medium);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.address-card:hover {
+  background-color: #f8fafc;
+}
+
+.address-card--selected {
+  border-color: var(--color-blue);
+  background-color: #f0f7ff;
+}
+
+.address-card__radio {
+  margin-top: 4px;
+  accent-color: var(--color-blue);
+}
+
+.address-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.address-card__rua {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.address-card__detalhes {
+  font-size: 13px;
+  color: var(--color-grey-dark);
+}
+
+.add-address-btn {
+  background: none;
+  border: 1px dashed var(--color-blue);
+  color: var(--color-blue);
+  padding: 14px;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-address-btn:hover {
+  background-color: #eff6ff;
+}
+
+/* ==========================================================================
+   4. ETAPA 2 - ENTREGA (FRETE)
+   ========================================================================== */
+.shipping-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shipping-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid var(--color-grey-medium);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.shipping-card--selected {
+  border-color: var(--color-blue);
+  background-color: #f0f7ff;
+}
+
+.shipping-card__radio {
+  accent-color: var(--color-blue);
+}
+
+.shipping-card__info {
+  flex-grow: 1;
+}
+
+.shipping-card__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 4px;
+}
+
+.shipping-card__time {
+  font-size: 13px;
+  color: var(--color-grey-dark);
+}
+
+.shipping-card__price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+/* ==========================================================================
+   5. ETAPA 3 - MÉTODOS DE PAGAMENTO & ABAS
+   ========================================================================== */
+.payment-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.payment-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  background-color: var(--color-grey-light);
+  border: 2px solid var(--color-grey-medium);
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-tab--active {
+  border-color: var(--color-blue);
+  background-color: #f0f7ff;
+  color: var(--color-blue);
+}
+
+.discount-badge {
+  font-size: 10px;
+  background-color: #22c55e;
+  color: var(--color-white);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Pix Section */
+.pix-content {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  color: #15803d;
+}
+
+.pix-content i {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.pix-content p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Formulário de Cartão + Visualização do Cartão */
+.card-payment-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .card-payment-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mockup Visual do Cartão (Estilo Glassmorphism/Dark Premium) */
+.credit-card-preview {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.credit-card-preview::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-preview__chip {
+  width: 36px;
+  height: 28px;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  border-radius: 4px;
+}
+
+.card-preview__number {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card-preview__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-preview__label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.card-preview__holder {
+  font-size: 13px;
+  text-transform: uppercase;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-preview__expiry {
+  font-size: 13px;
+}
+
+/* Formulário do Cartão */
+.card-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group--full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.form-group input, .form-group select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--color-blue);
+}
+
+/* ==========================================================================
+   6. COLUNA DIREITA - RESUMO FINANCEIRO
+   ========================================================================== */
+.checkout-summary {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: var(--color-grey-dark);
+}
+
+.summary-row--discount {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.summary-row--total {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--color-grey-medium);
+  font-size: 18px;
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.summary-row--total strong {
+  font-size: 22px;
+  color: var(--color-red);
+}
+
+.checkout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-continue {
+  background-color: #ff8c00; /* Laranja da Proway/KaBuM */
+  color: var(--color-white);
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+}
+
+.btn-continue:hover {
+  background-color: #e07b00;
+}
+
+.btn-continue:active {
+  transform: scale(0.98);
+}
+
+.btn-back {
+  background-color: var(--color-white);
+  color: var(--color-grey-dark);
+  border: 1px solid var(--color-grey-medium);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background-color: var(--color-grey-light);
+  color: var(--color-black);
+}
+
+/* ==========================================================================
+   7. ETAPA FINAL - SUCESSO DO PEDIDO (PIX QR CODE)
+   ========================================================================== */
+.success-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  font-size: 56px;
+  color: #22c55e;
+  margin-bottom: 20px;
+}
+
+.success-container h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.success-container p {
+  color: var(--color-grey-dark);
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.order-box {
+  background-color: var(--color-grey-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid var(--color-grey-medium);
+}
+
+.order-box__label {
+  font-size: 13px;
+  color: var(--color-grey-dark);
+  margin-bottom: 6px;
+}
+
+.order-box__number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+/* Pix QR Code */
+.pix-success-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
+  text-align: left;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .pix-success-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.pix-qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pix-qr-image {
+  width: 180px;
+  height: 180px;
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 8px;
+}
+
+.btn-copy-pix {
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  border: 2px solid var(--color-blue);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-copy-pix:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.pix-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pix-instructions h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.instruction-step {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--color-grey-dark);
+  line-height: 1.4;
+}
+
+.instruction-step i {
+  color: var(--color-blue);
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.btn-home {
+  display: inline-block;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-home:hover {
+  background-color: #0056b3;
+}
